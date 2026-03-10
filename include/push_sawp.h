@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:46:33 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/04 18:53:23 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/10 19:31:12 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,22 @@ long	safe_atoi(char *str);
 int		check_duplicate(t_node *stack, int nbr);
 void	add_node(t_node **stack, int nbr);
 void	check_input(char **box, t_node **stack);
+
+//utils
+void	assign_index(t_node *stack);
+int		is_sorted(t_node *stack);
+
+//stack utils
+int		stack_size(t_node *stack);
+t_node	*find_min(t_node *stack);
+t_node	*find_max(t_node *stack);
+t_node	*find_last(t_node *stack);
+int		node_position(t_node *stack, t_node *node);
+
+
+
+
+
 
 
 

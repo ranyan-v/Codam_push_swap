@@ -6,11 +6,17 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:49:30 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/04 18:51:30 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/10 19:35:49 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void error_exit(t_node *stack, char **box)
+{
+	
+}
+
 
 void	free_split(char **box)
 {
