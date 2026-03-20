@@ -6,30 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:49:30 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/10 19:35:49 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/18 15:15:33 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void error_exit(t_node *stack, char **box)
-{
-	
-}
-
-
-void	free_split(char **box)
-{
-	int	i;
-
-	i = 0;
-	while (box[i])
-	{
-		free(box[i]);
-		i++;
-	}
-	free(box);
-}
 
 int	total_input(int argc, char **argv)
 {
@@ -44,7 +25,7 @@ int	total_input(int argc, char **argv)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			error_exit("ERROR");
+			error_exit(box, stack);
 		j = 0;
 		while (split[j])
 		{
@@ -64,13 +45,13 @@ int	fill_box(char **box, char *input, int j)
 
 	split = ft_split(input, ' ');
 	if (!split)
-		error_exit("ERROR");
+		error_exit(box, stack);
 	k = 0;
 	while (split[k])
 	{
 		box[j] = ft_strdup(split[k]);
 		if (!box[j])
-			error_exit("ERROR");
+			error_exit(box, stack);
 		j++;
 		k++;
 	}
@@ -86,7 +67,7 @@ char	**normalize_input(int argc, char **argv)
 
 	box = malloc(sizeof(char *) * (total_input(argc, argv) + 1));
 	if (!box)
-		error_exit("ERROR");
+		error_exit(box, stack);
 	i = 1;
 	j = 0;
 	while (i < argc)

@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:46:33 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/10 19:31:12 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/18 15:20:32 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ typedef struct s_node
 t_node *parse_arguments(int argc, char **argv);
 
 //normalize_input
-void	free_split(char **box);
 int		total_input(int argc, char **argv);
 int		fill_box(char **box, char *input, int j);
 char	**normalize_input(int argc, char **argv);
 
-//input_check
+//input_check + stack_building
 int		check_nbr(char *box);
 long	safe_atoi(char *str);
 int		check_duplicate(t_node *stack, int nbr);
@@ -46,6 +45,9 @@ void	check_input(char **box, t_node **stack);
 //utils
 void	assign_index(t_node *stack);
 int		is_sorted(t_node *stack);
+void 	error_exit(char**box, t_node *stack);
+void	free_split(char **box);
+void	free_stack(t_node *stack);
 
 //stack utils
 int		stack_size(t_node *stack);
@@ -53,6 +55,9 @@ t_node	*find_min(t_node *stack);
 t_node	*find_max(t_node *stack);
 t_node	*find_last(t_node *stack);
 int		node_position(t_node *stack, t_node *node);
+
+//operations
+
 
 
 

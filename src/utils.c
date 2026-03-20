@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:26:45 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/10 19:35:54 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/18 15:18:11 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,39 @@ int	is_sorted(t_node *stack)
 		stack = stack -> next;
 	}
 	return (1);
+}
+
+void error_exit(char**box, t_node *stack)
+{
+	if (box)
+		free_split(box);
+	if (stack)
+		free_stack(stack);
+	write(2, "ERROR\n", 6);
+	exit(EXIT_FALURE);
+}
+
+void	free_split(char **box)
+{
+	int	i;
+
+	i = 0;
+	while (box[i])
+	{
+		free(box[i]);
+		i++;
+	}
+	free(box);
+}
+
+void	free_stack(t_node *stack)
+{
+	t_node	*tmp;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack -> next;
+		free(tmp);
+	}
 }
