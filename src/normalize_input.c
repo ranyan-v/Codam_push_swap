@@ -6,11 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:49:30 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/18 15:15:33 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/24 18:08:50 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/push_sawp.h"
 
 int	total_input(int argc, char **argv)
 {
@@ -78,4 +78,3 @@ char	**normalize_input(int argc, char **argv)
 	box[j] = NULL;
 	return (box);
 }
-

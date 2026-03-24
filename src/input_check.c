@@ -6,11 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:45:26 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/04 19:40:49 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/24 18:08:45 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/push_sawp.h"
 
 //1 = success
 //0 = error
@@ -21,17 +21,17 @@ int	check_nbr(char *box)
 	if (!box || !box[0]) //NULL pointer or empty string
 		return (0);
 	i = 0;
-	if(box[0] == '+' || box[0] == '-')
+	if (box[0] == '+' || box[0] == '-')
 		i++;
 	if (!box[i])//not single - or +
 		return (0);
-	while(box[i])
+	while (box[i])
 	{
 		if ((box[i]) < '0' || (box[i] > '9'))
-		return (0);
+			return (0);
 		i++;
 	}
-		return (1);
+	return (1);
 }
 
 long	safe_atoi(char *str)
@@ -43,7 +43,6 @@ long	safe_atoi(char *str)
 	i = 0;
 	sign = 1;
 	nbr = 0;
-
 	if ((str[i] == '-') || (str[i] == '+'))
 	{
 		if (str[i] == '-')
@@ -78,9 +77,9 @@ int	check_duplicate(t_node *stack, int nbr)
 
 void	add_node(t_node **stack, int nbr)
 {
-	t_node *new_node;
-	t_node *current;
-	
+	t_node	*new_node;
+	t_node	*current;
+
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		error_exit("Error");
@@ -90,7 +89,7 @@ void	add_node(t_node **stack, int nbr)
 	if (!*stack)
 	{
 		*stack = new_node;
-		return;
+		return ;
 	}
 	current = *stack;
 	while (current -> next)
@@ -103,7 +102,7 @@ void	check_input(char **box, t_node **stack)
 {
 	int		i;
 	long	nbr;
-	
+
 	i = 0;
 	while (box[i])
 	{

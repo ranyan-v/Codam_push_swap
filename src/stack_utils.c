@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                       :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 18:38:52 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/04 18:54:52 by rayan            ###   ########.fr       */
+/*   Created: 2026/03/24 15:39:48 by rayan             #+#    #+#             */
+/*   Updated: 2026/03/24 18:11:08 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../include/push_sawp.h"
 
 int	stack_size(t_node *stack)
 {
@@ -20,7 +20,7 @@ int	stack_size(t_node *stack)
 	while (stack)
 	{
 		count++;
-		stack = stack -> next
+		stack = stack -> next;
 	}
 	return (count);
 }

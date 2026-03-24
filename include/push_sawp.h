@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:46:33 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/18 15:20:32 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/24 18:27:19 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_node
 	int				index;
 	struct s_node	*next;
 	struct s_node	*previous;
-}	t_node;
+}					t_node;
 
 //parse_arguments
 t_node *parse_arguments(int argc, char **argv);
@@ -57,6 +57,28 @@ t_node	*find_last(t_node *stack);
 int		node_position(t_node *stack, t_node *node);
 
 //operations
+//swap
+void	swap(t_node **stack);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
+
+//push
+void	push(t_node **src, t_node **dest);
+void	pa(t_node **a, t_node **b);
+void	pb(t_node **a, t_node **b);
+
+//rotate
+void	rotate(t_node **stack);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rr(t_node **a, t_node **b);
+
+//reverse rotate
+void	reverse_rotate(t_node **stack);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
 
 
 
