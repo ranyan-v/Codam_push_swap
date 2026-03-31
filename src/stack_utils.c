@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:39:48 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/24 18:11:08 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/31 15:58:14 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	node_position(t_node *stack, t_node *node)
 	position = 0;
 	while (stack)
 	{
-		if (stack -> value == node -> value)
+		if (stack == node)
 			return (position);
 		stack = stack -> next;
 		position++;

@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:31:13 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/24 18:09:06 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/31 17:21:08 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	push(t_node **src, t_node **dest)
 	*src = tmp -> next;
 	if (*src)
 		(*src)-> previous = NULL;
-	tmp -> next = dest;
+	tmp -> next = *dest;
 	if (*dest)
 		(*dest)-> previous = tmp;
 	tmp -> previous = NULL;

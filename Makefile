@@ -6,11 +6,17 @@ INCLUDE = -I./include
 LIBFT = ./Libft/libft.a
 
 #Source File
-SRCS = ./src/normalize_input.c	\
+SRCS = ./src/push_swap.c		\
+		./src/normalize_input.c	\
 		./src/input_check.c 	\
-		./src/parse_arguments.c \
-		./src/list_utils.c		\
-		./src/main.c
+		./src/utils.c 			\
+		./src/stack_utils.c		\
+		./src/swap.c			\
+		./src/push.c			\
+		./src/rotate.c			\
+		./src/reverse_rotate.c	\
+		./src/sort_small.c		\
+		./main.c
 
 OBJS = $(SRCS:.c=.o)
 

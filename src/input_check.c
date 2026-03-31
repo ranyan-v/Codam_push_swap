@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:45:26 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/24 18:08:45 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/31 16:51:11 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	check_nbr(char *box)
 	return (1);
 }
 
-long	safe_atoi(char *str)
+//0 = error
+long	safe_atoi(char *str, int *error)
 {
 	int		i;
 	int		sign;
@@ -43,6 +44,7 @@ long	safe_atoi(char *str)
 	i = 0;
 	sign = 1;
 	nbr = 0;
+	*error = 0;
 	if ((str[i] == '-') || (str[i] == '+'))
 	{
 		if (str[i] == '-')
@@ -52,7 +54,10 @@ long	safe_atoi(char *str)
 	while (str[i])
 	{
 		if (nbr > ((LONG_MAX - (str[i] - '0')) / 10))//catch overflow for type long "nbr * 10 + digit <= LONG_MAX"
-			error_exit("Error");
+		{
+			*error = 1;
+			return (0);
+		}
 		nbr = nbr * 10 + (str[i] - '0');
 		i++;
 	}
@@ -82,7 +87,7 @@ void	add_node(t_node **stack, int nbr)
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
-		error_exit("Error");
+		error_exit(NULL, *stack);
 	new_node -> value = nbr;
 	new_node -> next = NULL;
 	new_node -> previous = NULL;
@@ -102,24 +107,28 @@ void	check_input(char **box, t_node **stack)
 {
 	int		i;
 	long	nbr;
+	int		error;
 
 	i = 0;
+	error = 0;
 	while (box[i])
 	{
 		// 1. Check valid numeric format
 		if (!check_nbr(box[i]))
-			error_exit("Error");
+			error_exit(box, *stack);
 
 		// 2. Convert safely to long
-		nbr = safe_atoi(box[i]);
+		nbr = safe_atoi(box[i], &error);
+		if (error)
+			error_exit(box, *stack);
 
 		// 3. Check int range
 		if (nbr < INT_MIN || nbr > INT_MAX)
-			error_exit("Error");
+			error_exit(box, *stack);
 
 		// 4. Check duplicates against existing stack
 		if (check_duplicate(*stack, (int)nbr))
-			error_exit("Error");
+			error_exit(box, *stack);
 
 		// 5. Add to stack
 		add_node(stack, (int)nbr);

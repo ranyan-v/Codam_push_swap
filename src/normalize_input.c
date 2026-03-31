@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:49:30 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/24 18:08:50 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/31 17:18:06 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ int	total_input(int argc, char **argv)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			error_exit(box, stack);
+			error_exit(NULL, NULL);
 		j = 0;
 		while (split[j])
 		{
 			total++;
 			j++;
 		}
-		free_split(split);
+		free_box(split);
 		i++;
 	}
 	return (total);
@@ -45,17 +45,17 @@ int	fill_box(char **box, char *input, int j)
 
 	split = ft_split(input, ' ');
 	if (!split)
-		error_exit(box, stack);
+		error_exit(box, NULL);
 	k = 0;
 	while (split[k])
 	{
 		box[j] = ft_strdup(split[k]);
 		if (!box[j])
-			error_exit(box, stack);
+			error_exit(box, NULL);
 		j++;
 		k++;
 	}
-	free_split(split);
+	free_box(split);
 	return (j);
 }
 
@@ -64,10 +64,14 @@ char	**normalize_input(int argc, char **argv)
 	int		i;
 	int		j;
 	char	**box;
+	int		total;
 
-	box = malloc(sizeof(char *) * (total_input(argc, argv) + 1));
+	total = total_input(argc, argv);
+	if (total == 0)
+		error_exit(NULL, NULL);
+	box = malloc(sizeof(char *) * (total + 1));
 	if (!box)
-		error_exit(box, stack);
+		error_exit(NULL, NULL);
 	i = 1;
 	j = 0;
 	while (i < argc)

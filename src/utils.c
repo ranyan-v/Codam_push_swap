@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:26:45 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/24 18:11:49 by rayan            ###   ########.fr       */
+/*   Updated: 2026/03/31 17:15:44 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int	is_sorted(t_node *stack)
 void	error_exit(char**box, t_node *stack)
 {
 	if (box)
-		free_split(box);
+		free_box(box);
 	if (stack)
 		free_stack(stack);
-	write(2, "ERROR\n", 6);
-	exit("EXIT_FALURE");
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
 
-void	free_split(char **box)
+void	free_box(char **box)
 {
 	int	i;
 
