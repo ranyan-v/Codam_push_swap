@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 18:26:35 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 17:26:48 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/01 17:07:04 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	sort_two(t_node **a)
 	int	first;
 	int	second;
 
-	if (!a || !*a || !(*a) -> next)
-		return;
-	first = (*a) -> value;
-	second = (*a) -> next -> value;
+	if (!a || !*a || !(*a)-> next)
+		return ;
+	first = (*a)-> value;
+	second = (*a)-> next -> value;
 	if (first > second)
 		sa(a);
 }
@@ -32,10 +32,10 @@ void	sort_three(t_node **a)
 	int	third;
 
 	if (!a || !*a || !(*a)-> next || !(*a)-> next -> next)
-		return;
-	first = (*a) -> value;
-	second = (*a) -> next -> value;
-	third = (*a) -> next -> next -> value;
+		return ;
+	first = (*a)-> value;
+	second = (*a)-> next -> value;
+	third = (*a)-> next -> next -> value;
 	if (first < second && second > third && first < third) //1 3 2
 	{
 		sa(a);
@@ -57,8 +57,8 @@ void	sort_three(t_node **a)
 void	to_top(t_node **a)
 {
 	t_node	*min;
-	int position;
-	
+	int		position;
+
 	min = find_min(*a);
 	position = node_position(*a, min);
 	if (position == 0)

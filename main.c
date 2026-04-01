@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 17:35:51 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 17:42:44 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/01 17:13:10 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc < 2)
 		return (0);
-
 	a = parse_arguments(argc, argv);
 	if (!a)
 		return (1);
-
 	if (!is_sorted(a))
 	{
 		size = stack_size(a);
@@ -36,8 +34,9 @@ int	main(int argc, char **argv)
 			sort_three(&a);
 		else if (size <= 5)
 			sort_four_or_five(&a, &b);
+		else if (size > 5)
+			sort_big(&a, &b);
 	}
-
 	free_stack(a);
 	return (0);
 }

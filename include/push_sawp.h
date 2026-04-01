@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:46:33 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 17:25:12 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/01 17:10:34 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_node
 }					t_node;
 
 //push_swap
-t_node *parse_arguments(int argc, char **argv);
+t_node	*parse_arguments(int argc, char **argv);
 
 //normalize_input
 int		total_input(int argc, char **argv);
@@ -45,7 +45,7 @@ void	check_input(char **box, t_node **stack);
 //utils
 void	assign_index(t_node *stack);
 int		is_sorted(t_node *stack);
-void 	error_exit(char**box, t_node *stack);
+void	error_exit(char**box, t_node *stack);
 void	free_box(char **box);
 void	free_stack(t_node *stack);
 
@@ -87,16 +87,6 @@ void	to_top(t_node **a);
 void	sort_four_or_five(t_node **a, t_node **b);
 
 //sort big
-
-
-
-
-
-
-
-
-
-
-
+void	fill_b(t_node **a, t_node **b, int range);
+void	sort_big(t_node **a, t_node **b);
 #endif
-

@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 15:39:48 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 15:58:14 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/01 17:46:01 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ t_node	*find_max(t_node *stack)
 	return (max_node);
 }
 
-t_node	*find_last(t_node *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack -> next)
-		stack = stack -> next;
-	return (stack);
-}
+// t_node	*find_last(t_node *stack)
+// {
+// 	if (!stack)
+// 		return (NULL);
+// 	while (stack -> next)
+// 		stack = stack -> next;
+// 	return (stack);
+// }
 
 int	node_position(t_node *stack, t_node *node)
 {

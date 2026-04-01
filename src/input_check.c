@@ -6,7 +6,7 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:45:26 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 16:51:11 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/01 17:04:42 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_nbr(char *box)
 	i = 0;
 	if (box[0] == '+' || box[0] == '-')
 		i++;
-	if (!box[i])//not single - or +
+	if (!box[i]) //not single - or +
 		return (0);
 	while (box[i])
 	{
@@ -53,7 +53,7 @@ long	safe_atoi(char *str, int *error)
 	}
 	while (str[i])
 	{
-		if (nbr > ((LONG_MAX - (str[i] - '0')) / 10))//catch overflow for type long "nbr * 10 + digit <= LONG_MAX"
+		if (nbr > ((LONG_MAX - (str[i] - '0')) / 10)) //catch overflow for type long "nbr * 10 + digit <= LONG_MAX"
 		{
 			*error = 1;
 			return (0);
@@ -116,20 +116,16 @@ void	check_input(char **box, t_node **stack)
 		// 1. Check valid numeric format
 		if (!check_nbr(box[i]))
 			error_exit(box, *stack);
-
 		// 2. Convert safely to long
 		nbr = safe_atoi(box[i], &error);
 		if (error)
 			error_exit(box, *stack);
-
 		// 3. Check int range
 		if (nbr < INT_MIN || nbr > INT_MAX)
 			error_exit(box, *stack);
-
 		// 4. Check duplicates against existing stack
 		if (check_duplicate(*stack, (int)nbr))
 			error_exit(box, *stack);
-
 		// 5. Add to stack
 		add_node(stack, (int)nbr);
 		i++;
