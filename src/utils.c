@@ -6,11 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:26:45 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 17:15:44 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/02 19:34:40 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_sawp.h"
+#include "../include/push_swap.h"
 
 void	assign_index(t_node *stack)
 {
@@ -29,7 +29,7 @@ void	assign_index(t_node *stack)
 				index++;
 			compare = compare -> next;
 		}
-		current -> value = index;
+		current -> index = index;
 		current = current -> next;
 	}
 }

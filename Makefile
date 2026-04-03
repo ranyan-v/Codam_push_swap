@@ -16,6 +16,7 @@ SRCS = ./src/push_swap.c		\
 		./src/rotate.c			\
 		./src/reverse_rotate.c	\
 		./src/sort_small.c		\
+		./src/sort_big_cost.c	\
 		./src/sort_big.c		\
 		./main.c
 

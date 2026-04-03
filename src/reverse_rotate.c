@@ -6,11 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 18:06:32 by rayan             #+#    #+#             */
-/*   Updated: 2026/04/01 17:05:21 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/02 19:34:03 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_sawp.h"
+#include "../include/push_swap.h"
 
 void	reverse_rotate(t_node **stack)
 {
@@ -24,6 +24,7 @@ void	reverse_rotate(t_node **stack)
 	if (last -> previous)
 		last -> previous -> next = NULL;
 	last -> next = *stack;
+	(*stack)->previous = last;
 	last -> previous = NULL;
 	*stack = last;
 }

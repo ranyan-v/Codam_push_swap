@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_sawp.h                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 17:46:33 by rayan             #+#    #+#             */
-/*   Updated: 2026/04/01 17:10:34 by rayan            ###   ########.fr       */
+/*   Created: 2026/04/02 19:31:21 by rayan             #+#    #+#             */
+/*   Updated: 2026/04/02 19:40:50 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,40 +53,46 @@ void	free_stack(t_node *stack);
 int		stack_size(t_node *stack);
 t_node	*find_min(t_node *stack);
 t_node	*find_max(t_node *stack);
-t_node	*find_last(t_node *stack);
 int		node_position(t_node *stack, t_node *node);
 
 //operations
-//swap
+///swap
 void	swap(t_node **stack);
 void	sa(t_node **a);
 void	sb(t_node **b);
 void	ss(t_node **a, t_node **b);
 
-//push
+///push
 void	push(t_node **src, t_node **dest);
 void	pa(t_node **a, t_node **b);
 void	pb(t_node **a, t_node **b);
 
-//rotate
+///rotate
 void	rotate(t_node **stack);
 void	ra(t_node **a);
 void	rb(t_node **b);
 void	rr(t_node **a, t_node **b);
 
-//reverse rotate
+///reverse rotate
 void	reverse_rotate(t_node **stack);
 void	rra(t_node **a);
 void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
 
-//sort small
+///sort small
 void	sort_two(t_node **a);
 void	sort_three(t_node **a);
 void	to_top(t_node **a);
 void	sort_four_or_five(t_node **a, t_node **b);
 
 //sort big
-void	fill_b(t_node **a, t_node **b, int range);
+///cheapest move
+int		rotation_cost(int position, int size);
+t_node	*cheapest_move(t_node *a, int chunk_start, int chunk_end);
+
+///solver
+void	to_a_top(t_node **a, t_node *target);
+void	max_to_b_top(t_node **b);
+void	fill_b(t_node **a, t_node **b, int size, int range);
 void	sort_big(t_node **a, t_node **b);
 #endif

@@ -6,11 +6,11 @@
 /*   By: rayan <rayan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 16:49:30 by rayan             #+#    #+#             */
-/*   Updated: 2026/03/31 17:18:06 by rayan            ###   ########.fr       */
+/*   Updated: 2026/04/02 19:33:51 by rayan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_sawp.h"
+#include "../include/push_swap.h"
 
 int	total_input(int argc, char **argv)
 {
